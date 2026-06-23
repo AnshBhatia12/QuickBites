@@ -1,5 +1,4 @@
 'use client';
-
 import classes from './MealsSummary.module.css';
 
 const CATEGORIES = [
@@ -11,6 +10,18 @@ const CATEGORIES = [
   { emoji: '🌮', label: 'Mexican' },
   { emoji: '🍗', label: 'Chicken' },
   { emoji: '🍦', label: 'Desserts' },
+  { emoji: '🍰', label: 'Bakery' },
+  { emoji: '☕',  label:  'Coffee' },
+  { emoji: '🍝', label: 'Italian' },
+  { emoji: '🥘', label: 'Indian' },
+  { emoji: '🍱', label: 'Asian' },
+  { emoji: '🥪', label: 'Sandwiches' },
+  { emoji: '🍤', label: 'Seafood' },
+  { emoji: '🥩', label: 'BBQ' },
+  { emoji: '🍩', label: 'Donuts' },
+  { emoji: '🧋', label: 'Bubble Tea' },
+  { emoji: '🥐', label: 'Breakfast' },
+  { emoji: '🍹', label: 'Drinks' },
 ];
 
 const MealsSummary = () => (
