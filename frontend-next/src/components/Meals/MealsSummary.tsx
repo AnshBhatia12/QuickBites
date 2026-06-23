@@ -11,7 +11,7 @@ const CATEGORIES = [
   { emoji: '🍗', label: 'Chicken' },
   { emoji: '🍦', label: 'Desserts' },
   { emoji: '🍰', label: 'Bakery' },
-  { emoji: '☕', label: 'Coffee' },
+  { emoji: '☕',  label:  'Coffee' },
   { emoji: '🍝', label: 'Italian' },
   { emoji: '🥘', label: 'Indian' },
   { emoji: '🍱', label: 'Asian' },
