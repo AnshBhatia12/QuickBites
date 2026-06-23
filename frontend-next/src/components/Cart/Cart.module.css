@@ -1,0 +1,212 @@
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 200;
+  animation: fadeIn 0.2s ease;
+}
+
+.drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 420px;
+  max-width: 100vw;
+  background: var(--white);
+  z-index: 201;
+  display: flex;
+  flex-direction: column;
+  box-shadow: -4px 0 32px rgba(0, 0, 0, 0.15);
+  animation: slideIn 0.25s ease;
+}
+
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes slideIn { from { transform: translateX(100%); } to { transform: translateX(0); } }
+
+/* Header */
+.drawerHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+.drawerTitle {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.drawerTitle svg { width: 22px; height: 22px; color: var(--red); }
+
+.itemCount {
+  background: var(--red-light);
+  color: var(--red);
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.15rem 0.6rem;
+  border-radius: 20px;
+}
+
+.closeBtn {
+  background: var(--bg);
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.closeBtn:hover { background: var(--border); }
+
+/* Body */
+.drawerBody {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1rem 1.5rem;
+}
+
+.drawerBody::-webkit-scrollbar { width: 4px; }
+.drawerBody::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+
+/* Empty state */
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  min-height: 300px;
+  text-align: center;
+  gap: 0.5rem;
+}
+
+.emptyIcon { font-size: 4rem; }
+.emptyTitle { font-size: 1.1rem; font-weight: 700; color: var(--text-primary); }
+.emptySub { font-size: 0.875rem; color: var(--text-secondary); }
+
+.browseBtn {
+  margin-top: 1rem;
+  background: var(--red);
+  color: var(--white);
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 0.7rem 1.75rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.browseBtn:hover { background: var(--red-dark); }
+
+/* Items list */
+.items { margin-bottom: 1.25rem; }
+
+/* Coupon */
+.coupon {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 1.5px dashed var(--border);
+  border-radius: var(--radius-sm);
+  padding: 0.65rem 0.875rem;
+  margin-bottom: 1.25rem;
+}
+
+.coupon span { font-size: 1rem; }
+
+.coupon input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 0.85rem;
+  font-family: inherit;
+  color: var(--text-primary);
+}
+
+.coupon input::placeholder { color: var(--text-muted); }
+
+.coupon button {
+  background: none;
+  border: none;
+  color: var(--red);
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+/* Bill */
+.bill {
+  background: var(--bg);
+  border-radius: var(--radius-md);
+  padding: 1rem;
+}
+
+.billTitle {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+}
+
+.billRow {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+}
+
+.billTotal {
+  border-top: 1px solid var(--border);
+  padding-top: 0.75rem;
+  margin-top: 0.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  font-size: 0.95rem;
+}
+
+/* Footer */
+.drawerFooter {
+  border-top: 1px solid var(--border);
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
+  background: var(--white);
+}
+
+.footerInfo { display: flex; flex-direction: column; }
+
+.footerTotal { font-size: 1.15rem; font-weight: 800; color: var(--text-primary); }
+
+.footerSub { font-size: 0.75rem; color: var(--text-muted); }
+
+.orderBtn {
+  background: var(--red);
+  color: var(--white);
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 0.85rem 1.75rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.orderBtn:hover { background: var(--red-dark); }
+.orderBtn:active { transform: scale(0.97); }
+
+@media (max-width: 480px) {
+  .drawer { width: 100vw; }
+}
