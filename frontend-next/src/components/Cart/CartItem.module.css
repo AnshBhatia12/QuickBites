@@ -1,0 +1,62 @@
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.875rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.item:last-child { border-bottom: none; }
+
+.info {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+}
+
+.vegDot { font-size: 0.75rem; margin-top: 3px; }
+
+.name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.15rem;
+}
+
+.price {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+}
+
+.counter {
+  display: flex;
+  align-items: center;
+  border: 1.5px solid var(--red);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.counterBtn {
+  background: var(--white);
+  color: var(--red);
+  border: none;
+  width: 28px;
+  height: 28px;
+  font-size: 1rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s;
+}
+
+.counterBtn:hover { background: var(--red-light); }
+
+.amount {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--red);
+  min-width: 24px;
+  text-align: center;
+}
