@@ -1,6 +1,6 @@
 'use client';
 
-import { useContext } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 import CartContext from '@/store/cart-context';
 import CartItem from './CartItem';
@@ -97,11 +97,12 @@ const Cart = ({ onClose }: { onClose: () => void }) => {
     </>
   );
 
-  if (typeof window === 'undefined') return null;
-  const portal = document.getElementById('overlays');
-  if (!portal) return null;
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => { setMounted(true); }, []);
 
-  return createPortal(content, portal);
+  if (!mounted) return null;
+
+  return createPortal(content, document.getElementById('overlays')!);
 };
 
 export default Cart;
